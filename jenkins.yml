@@ -3,7 +3,7 @@ kind: Pod
 spec:
   containers:
     - name: buildah
-      image: localhost:30500/buildah:0.1.1
+      image: localhost:30500/buildah:latest
       securityContext:
         privileged: true
       command:
