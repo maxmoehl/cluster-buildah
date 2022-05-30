@@ -4,6 +4,8 @@ spec:
   containers:
     - name: buildah
       image: m4xmoehl/buildah:0.1.0
+      securityContext:
+        privileged: true
       command:
         - sleep
       args:
