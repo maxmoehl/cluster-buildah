@@ -11,7 +11,7 @@ pipeline {
         stage('Collect Tag') {
             steps {
                 version_tag = sh(
-                    script: 'git tag --points-at HEAD'
+                    script: 'git tag --points-at HEAD',
                     returnStdout: true
                 ).trim()
             }
