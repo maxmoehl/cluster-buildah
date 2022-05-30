@@ -10,4 +10,4 @@ Tools included:
 
 Some more text to trigger Jenkins!
 Some more text to trigger Jenkins!
-Some more text to trigger Jenkins!s
+Some more text to trigger Jenkins!
