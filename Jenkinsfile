@@ -1,5 +1,3 @@
-def version_tag
-
 pipeline {
     agent {
         kubernetes {
