@@ -10,10 +10,12 @@ pipeline {
     stages {
         stage('Collect Tag') {
             steps {
-                version_tag = sh(
-                    script: 'git tag --points-at HEAD',
-                    returnStdout: true
-                ).trim()
+                script {
+                    version_tag = sh(
+                        script: 'git tag --points-at HEAD',
+                        returnStdout: true
+                    ).trim()
+                }
             }
         }
         stage('Build') {
