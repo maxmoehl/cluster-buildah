@@ -13,7 +13,7 @@ pipeline {
         }
         stage('Push') {
             steps {
-                sh 'buildah push '
+                sh 'buildah push registry:5000/buildah:0.1.1'
             }
         }
     }
