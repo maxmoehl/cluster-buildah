@@ -1,3 +1,5 @@
+def version_tag
+
 pipeline {
     agent {
         kubernetes {
@@ -6,20 +8,19 @@ pipeline {
         }
     }
     stages {
-        tag = ""
         stage('Configure') {
             steps {
-                tag = sh 'git tag --points-at HEAD'
+                version_tag = sh 'git tag --points-at HEAD'
             }
         }
         stage('Build') {
             steps {
-                sh 'buildah bud -t registry:5000/buildah:${tag} .'
+                sh 'buildah bud -t registry:5000/buildah:${version_tag} .'
             }
         }
         stage('Push') {
             steps {
-                sh 'buildah push --tls-verify=false registry:5000/buildah:${tag}'
+                sh 'buildah push --tls-verify=false registry:5000/buildah:${version_tag}'
             }
         }
     }
